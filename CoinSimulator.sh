@@ -26,6 +26,18 @@ elif [ $tailCount -eq 21 ]
 then
 	echo "Tails win : " $tailCount " times"
 else
-	echo " Match is tie!!"
+	while [ $(( $headCount -$tailCount )) -eq 2 ]
+	do
+		 var=$(( RANDOM%2 ))
+	        if [ $var -eq 0 ]
+        	then
+                	echo " head is winner"
+                	headCount=$(( headCount+1 ))
+        	else
+                	echo " tail is winner"
+                	tailCount=$(( tailCount+1 ))
+        	fi
+	done
+	echo " Difference between headCount and tailCount is 2 !!"
 fi
 #Code Addition by UC1 end from here!!!
