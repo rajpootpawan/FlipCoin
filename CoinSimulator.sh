@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -x
 
 #Code Adding by UC1 Start from here !!!
 
@@ -6,7 +6,8 @@
 
 headCount=0
 tailCount=0
-for (( i=0;i<10;i++ ))
+#To run loop 21 Lime Add by UC3
+while [ $headCount -le 20 -o $tailCount -le 20 ]
 do
 	var=$(( RANDOM%2 ))
 	if [ $var -eq 0 ]
@@ -18,6 +19,13 @@ do
 		tailCount=$(( tailCount+1 ))
 	fi
 done
-echo "Head win : " $headCount " times"
-echo "Tails win : " $tailCount " times"
+if [ $headCount -eq 21 ]
+then
+	echo "Head win : " $headCount " times"
+elif [ $tailCount -eq 21 ]
+then
+	echo "Tails win : " $tailCount " times"
+else
+	echo " Match is tie!!"
+fi
 #Code Addition by UC1 end from here!!!
