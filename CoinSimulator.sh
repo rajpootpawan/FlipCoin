@@ -11,10 +11,10 @@ do
 	var=$(( RANDOM%2 ))
 	if [ $var -eq 0 ]
 	then
-		echo "head is winner"
+		echo " head is winner"
 		headCount=$(( headCount+1 ))
 	else
-		echo "tail is winner"
+		echo " tail is winner"
 		tailCount=$(( tailCount+1 ))
 	fi
 done
